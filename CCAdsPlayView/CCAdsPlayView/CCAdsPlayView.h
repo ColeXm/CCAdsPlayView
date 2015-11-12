@@ -45,7 +45,7 @@ typedef void(^tapActionBlock)(NSInteger index);
 + (instancetype)adsPlayViewWithFrame:(CGRect)rect imageGroup:(NSArray *)imageGroup;
 
 /**
- *  开始播放，默认三秒钟,点击响应block回调
+ *  开始播放，默认五秒钟,点击响应block回调
  *
  *  @param block 回调，返回当前图片index，不需要回调则设置为nil
  */

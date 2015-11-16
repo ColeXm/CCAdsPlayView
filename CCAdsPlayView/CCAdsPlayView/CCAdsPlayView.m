@@ -45,7 +45,6 @@
         self.autoresizesSubviews = YES;
         
         self.scrollView = [[UIScrollView alloc] initWithFrame:self.bounds];
-//        self.scrollView.autoresizingMask = 0xFF;
         self.scrollView.contentMode = UIViewContentModeCenter;
         self.scrollView.contentSize = CGSizeMake(3 * frame.size.width, frame.size.height);
         self.scrollView.delegate = self;
@@ -71,7 +70,7 @@
         UITapGestureRecognizer *tapGesture = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(tap)];
         [self addGestureRecognizer:tapGesture];
         
-        //默认三秒钟循环播放
+        //默认五秒钟循环播放
         self.animationDuration = -1;
         //默认居中
         self.pageContolAliment = CCPageContolAlimentCenter;
@@ -115,12 +114,14 @@
 
 
 -(void)setAnimationDuration:(NSTimeInterval)animationDuration{
+    [self.animationTimer invalidate];
+    self.animationTimer = nil;
+    
     if (animationDuration == 0) {
         return;
     }
 
-    _animationDuration = animationDuration>0 ?:5;
-    
+    _animationDuration = (animationDuration>0?animationDuration:5);
     self.animationTimer = [NSTimer scheduledTimerWithTimeInterval:_animationDuration
                                                            target:self
                                                          selector:@selector(animationTimerDidFired:)

@@ -61,17 +61,12 @@
         _pageControl.pageIndicatorTintColor = [UIColor grayColor];
         [self addSubview:_pageControl];
         
-        //圆弧
-        UIImageView *roundImage = [[UIImageView alloc]initWithFrame:CGRectMake(0, CGRectGetHeight(self.scrollView.frame) - 167.5 * SCREEN_WIDTH/320., CGRectGetWidth(self.scrollView.frame),167.5 * SCREEN_WIDTH/320.)];
-        roundImage.image = [UIImage imageNamed:@"bg_transitcorner"];
-        [self addSubview:roundImage];
-        
-        
+        //点击事件
         UITapGestureRecognizer *tapGesture = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(tap)];
         [self addGestureRecognizer:tapGesture];
         
         //默认五秒钟循环播放
-        self.animationDuration = -1;
+        self.animationDuration = 5.;
         //默认居中
         self.pageContolAliment = CCPageContolAlimentCenter;
         //默认第一张
@@ -114,14 +109,15 @@
 
 
 -(void)setAnimationDuration:(NSTimeInterval)animationDuration{
+    _animationDuration = animationDuration;
+    
     [self.animationTimer invalidate];
     self.animationTimer = nil;
     
-    if (animationDuration == 0) {
+    if (animationDuration <= 0) {
         return;
     }
 
-    _animationDuration = (animationDuration>0?animationDuration:5);
     self.animationTimer = [NSTimer scheduledTimerWithTimeInterval:_animationDuration
                                                            target:self
                                                          selector:@selector(animationTimerDidFired:)

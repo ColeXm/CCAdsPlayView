@@ -22,9 +22,9 @@
 /* 当前index **/
 @property(nonatomic,assign)NSInteger        currentPageIndex;
 /* 所有的图片数组 **/
-@property(nonatomic,strong)NSMutableArray<UIImageView *>  *imageArray;
+@property(nonatomic,strong)NSMutableArray   *imageArray;
 /* 当前图片数组，永远只存储三张图 **/
-@property(nonatomic,strong)NSMutableArray<UIImageView *>   *currentArray;
+@property(nonatomic,strong)NSMutableArray   *currentArray;
 /* block方式接收回调 */
 @property(nonatomic,copy)tapActionBlock block;
 

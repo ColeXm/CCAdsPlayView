@@ -34,7 +34,7 @@ typedef void(^tapActionBlock)(NSInteger index);
 @property(nonatomic,strong)UIImage *placeHoldImage;
 
 /* 数据源 **/
-@property(nonatomic,copy)NSArray *dataArray;
+@property(nonatomic,copy)NSArray *imageGroup;
 
 /**
  *  初始化广告播放滚动View

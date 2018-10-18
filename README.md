@@ -10,6 +10,7 @@
 - 注：暂只支持code方式创建
 
 
+
 ##### API
 
     CCAdsPlayView *apView = [CCAdsPlayView adsPlayViewWithFrame:CGRectMake(0, 0,screenWidth, screenHeight) imageGroup:imgArray];
@@ -24,3 +25,6 @@
     }];
     
     
+
+#### 觉得好用的话，客官请给星哦，感谢。
+

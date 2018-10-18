@@ -10,7 +10,7 @@
 - 注：暂只支持code方式创建
 
 
-##### 使用API
+##### API
 
         CCAdsPlayView *apView = [CCAdsPlayView adsPlayViewWithFrame:CGRectMake(0, 0,screenWidth, screenHeight) imageGroup:imgArray];
         //apView.pageContolAliment = CCPageContolAlimentRight;

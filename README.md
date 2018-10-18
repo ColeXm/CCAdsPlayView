@@ -12,15 +12,15 @@
 
 ##### API
 
-        CCAdsPlayView *apView = [CCAdsPlayView adsPlayViewWithFrame:CGRectMake(0, 0,screenWidth, screenHeight) imageGroup:imgArray];
-        //apView.pageContolAliment = CCPageContolAlimentRight;
-        //apView.animationDuration = 1.;
-        //apView.placeHoldImage = [UIImage imageNamed:@"Default-568h"];
-        [self.view addSubview:apView];
+    CCAdsPlayView *apView = [CCAdsPlayView adsPlayViewWithFrame:CGRectMake(0, 0,screenWidth, screenHeight) imageGroup:imgArray];
+    //apView.pageContolAliment = CCPageContolAlimentRight;
+    //apView.animationDuration = 1.;
+    //apView.placeHoldImage = [UIImage imageNamed:@"Default-568h"];
+    [self.view addSubview:apView];
     
-        //这句可以在任何地方使用，异步下载并展示
-        [apView startWithTapActionBlock:^(NSInteger index) {
-            NSLog(@"点击了第%@张",@(index));
-        }];
+    //这句可以在任何地方使用，异步下载并展示
+    [apView startWithTapActionBlock:^(NSInteger index) {
+        NSLog(@"点击了第%@张",@(index));
+    }];
     
     
